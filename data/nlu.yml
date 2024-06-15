@@ -1,0 +1,248 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - xin chào
+    - chào
+    - chào buổi chiều
+    - chào buổi sáng
+    - chào buổi trưa
+    - chào cậu
+    - chào cô
+    - chào Kevin
+    - Chào Levin
+    - Xin chào Levin
+
+- intent: goodbye
+  examples: |
+    - Tạm biệt
+    - bye bye
+    - bai bai
+    - Hẹn gặp lại sau
+    - Hẹn gặp lại cậu sau
+    - Hẹn gặp lại chat bot sau
+    - Hẹn gặp lại Levin sau
+    - bye
+    - goodbye
+    - have a nice day
+
+- intent: bot_challenge
+  examples: |
+    - Bạn có phải là bot không?
+    - Bạn có phải là con người không?
+    - Tôi đang nói chuyện vơi bot đúng không?
+    - Tôi đang nói chuyện với người đúng không?
+
+- intent: book_tour
+  examples: |
+    - Tôi muốn đặt tour
+    - Tôi muốn đặt một chuyến du lịch
+    - Làm sao để đặt một tour?
+    - Làm sao để đặt một chuyến du lịch
+    - Tôi cần đặt một tour cho 5 người
+    - Tôi cần đặt một tour cho 6 người
+    - Bạn có thể giúp tôi đặt một tour được không?
+    - Bạn có thể giúp tôi đặt một chuyến du lịch được không?
+#tour price search
+- intent: search_tour_price_between
+  examples: |
+    - Tôi muốn đặt tour có giá từ [1000](low) đến [5000](high)
+    - Tôi muốn đặt tour có giá khoảng [1500](low) đến [3500](high)
+    - Tôi muốn đặt tour có giá khoảng [1500](low) - [3500](high)
+    - Đặt tour có giá từ [1500](low) đến [3500](high)
+    - Đặt tour có giá khoảng [1500](low) đến [3500](high)
+    - Đặt tour có giá khoảng [1500](low) - [3500](high)
+
+- intent: search_tour_price_high
+  examples: |
+    - Tôi muốn đặt tour có giá [10000](high)
+    - Đặt tour có giá [10000](high)
+    - Tôi muốn đặt tour có giá nhỏ hơn [4500](high)
+    - Tôi muốn tìm tour giá dưới [4500](high)
+    - Tôi cần tour giá dưới [4500](high)
+    - Cho tôi một tour có giá thấp hơn [4500](high)
+    - Tour có giá ít hơn [4500](high)
+    - Tìm giúp tôi tour dưới [4500](high)
+    - Có tour nào dưới [4500](high) không?
+    - Tôi đang tìm tour giá dưới [4500](high)
+    - Tôi muốn tìm tour giá thấp hơn [4500](high)
+    - Tour nào có giá dưới [4500](high)?
+    - Tôi muốn tour giá ít hơn [4500](high)
+    - Có tour nào giá nhỏ hơn [4500](high) không?
+    - Cho tôi biết các tour giá dưới [4500](high)
+    - Tour nào có giá ít hơn [4500](high)?
+    - Tôi cần tour giá ít hơn [4500](high)
+    - Tìm giúp tôi tour có giá nhỏ hơn [4500](high)
+    - Tôi đang tìm tour giá ít hơn [4500](high)
+    - Tour nào có giá nhỏ hơn [4500](high)?
+    - Có tour nào giá thấp hơn [4500](high) không?
+    - Tôi muốn đặt tour giá thấp hơn [4500](high)
+    - Tôi muốn đặt chuyến du lịch có giá nhỏ hơn [4500](high)
+    - Tôi muốn tìm chuyến du lịch giá dưới [4500](high)
+    - Tôi cần chuyến du lịch giá dưới [4500](high)
+    - Cho tôi một chuyến du lịch có giá thấp hơn [4500](high)
+    - chuyến du lịch có giá ít hơn [4500](high)
+    - Tìm giúp tôi chuyến du lịch dưới [4500](high)
+    - Có chuyến du lịch nào dưới [4500](high) không?
+    - Tôi đang tìm chuyến du lịch giá dưới [4500](high)
+    - Tôi muốn tìm chuyến du lịch giá thấp hơn [4500](high)
+    - chuyến du lịch nào có giá dưới [4500](high)?
+    - Tôi muốn chuyến du lịch giá ít hơn [4500](high)
+    - Có chuyến du lịch nào giá nhỏ hơn [4500](high) không?
+    - Cho tôi biết các chuyến du lịch giá dưới [4500](high)
+    - chuyến du lịch nào có giá ít hơn [4500](high)?
+    - Tôi cần chuyến du lịch giá ít hơn [4500](high)
+    - Tìm giúp tôi chuyến du lịch có giá nhỏ hơn [4500](high)
+    - Tôi đang tìm chuyến du lịch giá ít hơn [4500](high)
+    - chuyến du lịch nào có giá nhỏ hơn [4500](high)?
+    - Có chuyến du lịch nào giá thấp hơn [4500](high) không?
+    - Tôi muốn đặt chuyến du lịch giá thấp hơn [4500](high)
+
+- intent: search_tour_price_low
+  examples: |
+    - Tôi muốn đặt chuyến du lịch có giá trên [2000](low)
+    - Tôi muốn tìm chuyến du lịch có giá trên [2000](low)
+    - Tôi cần chuyến du lịch có giá trên [2000](low)
+    - Cho tôi một chuyến du lịch có giá cao hơn [2000](low)
+    - chuyến du lịch có giá nhiều hơn [2000](low)
+    - Tìm giúp tôi chuyến du lịch trên [2000](low)
+    - Có chuyến du lịch nào giá trên [2000](low) không?
+    - Tôi đang tìm chuyến du lịch có giá trên [2000](low)
+    - Tôi muốn tìm chuyến du lịch giá trên [2000](low)
+    - Tour nào có giá trên [2000](low)?
+    - Tôi muốn tour có giá nhiều hơn [2000](low)
+    - Có tour nào giá cao hơn [2000](low) không?
+    - Cho tôi biết các tour có giá trên [2000](low)
+    - Tour nào có giá nhiều hơn [2000](low)?
+    - Tôi cần tour giá trên [2000](low)
+    - Tìm giúp tôi tour có giá cao hơn [2000](low)
+    - Tôi đang tìm tour giá trên [2000](low)
+    - Tour nào có giá cao hơn [2000](low)?
+    - Có tour nào giá nhiều hơn [2000](low) không?
+    - Tôi muốn đặt tour giá trên [2000](low)
+
+# search tour by location 
+- intent: search_tour_location
+  examples: |
+    - Tôi muốn đặt tour ở [Đà Nẵng](location)
+    - Tôi muốn đi du lịch ở [Huế](location)
+    - Cho tôi đặt tour đến [sài gòn](location)
+    - Tôi muốn tìm tour ở [Hồ Chí Minh](location)
+    - Có tour nào đến [Hà Nội](location) không?
+    - Tôi muốn tham quan [Quãng Ngãi](location)
+    - Tôi muốn du lịch tại [Quãng Nam](location)
+    - Tôi muốn đi tour ở [Thừa Thiên Huế](location)
+    - Tôi muốn đi chơi ở [Kom tum](location)
+    - Tôi muốn đặt vé đi [Đà Lạt](location)
+    - Tôi cần đặt tour đến [Hội An](location)
+    - Có tour nào đến [Hải Dương](location) không?
+    - Tìm giúp tôi tour đến [Trà Vinh](location)
+    - Cho tôi biết các tour ở [Tam Kì](location)
+    - Tôi muốn đặt chuyến du lịch đến [Phú Thuận](location)
+    - Tôi muốn tham gia tour ở [Quảng Bình](location)
+    - Có tour nào đến [Hương Vinh, Thành Phố Huế, Thừa Thiên Huế](location) không?
+    - Tôi muốn tìm chuyến đi đến [Hòa Khánh Bắc, Liên Chiểu, Đà Nẵng](location)
+    - Cho tôi đặt chuyến du lịch đến [Ngũ Hành Sơn, Đà Nẵng](location)
+    - Tôi muốn tham quan du lịch [Đống Đa, Hà Nội](location)
+
+# search tour by location and price
+- intent: search_tour_location_price_between
+  examples: |
+    - Tôi muốn đặt chuyến đi ở [Hà Nội](location) có giá từ [5000](low) đến [100000](high)
+    - Tôi muốn tìm tour du lịch ở [Đà Nẵng](location) với giá từ [7000](low) đến [150000](high)
+    - Tôi muốn đặt tour tại [Hội An](location) với giá từ [2000](low) đến [90000](high)
+    - Tôi muốn du lịch tại [Hội An](location) với giá từ [2000](low) đến [90000](high)
+    - Cho tôi một tour ở [Sa Pa](location) giá từ [3000](low) đến [120000](high)
+    - Tôi cần tour ở [Vũng Tàu](location) giá từ [8000](low) đến [200000](high)
+    - Tìm giúp tôi tour ở [Phú Quốc](location) có giá từ [1000](low) đến [180000](high)
+    - Có tour nào ở [Hạ Long](location) giá từ [6000](low) đến [160000](high) không?
+    - Tôi muốn tham gia tour ở [Nha Trang](location) có giá từ [4000](low) đến [140000](high)
+    - Cho tôi biết các tour ở [Cần Thơ](location) giá từ [2000](low) đến [110000](high)
+    - Tôi muốn tìm tour giá từ [5000](low) đến [130000](high) ở [Đà Lạt](location)
+    - Tôi muốn du lịch ở [Quảng Ninh](location) với giá từ [7000](low) đến [170000](high)
+    - Tôi muốn tham quan [Phan Thiết](location) với giá từ [3000](low) đến [100000](high)
+    - Có tour nào giá từ [9000](low) đến [190000](high) tại [Huế](location) không?
+    - Tour ở [Bình Thuận](location) có giá từ [4000](low) đến [150000](high)
+    - Tìm giúp tôi tour giá từ [2000](low) đến [90000](high) ở [Quảng Bình](location)
+    - Tôi muốn đặt tour giá từ [8000](low) đến [180000](high) tại [Kon Tum](location)
+    - Tôi cần tour giá từ [1000](low) đến [200000](high) ở [Đồng Nai](location)
+    - Cho tôi một tour giá từ [6000](low) đến [160000](high) ở [Hà Giang](location)
+    - Tôi muốn tìm chuyến đi giá từ [7000](low) đến [170000](high) tại [Tây Ninh](location)
+    - Tôi muốn đi [Ninh Bình](location) với giá từ [2000](low) đến [95000](high)
+    - Có tour nào giá từ [5000](low) đến [135000](high) tại [Bắc Ninh](location) không?
+    - Tìm giúp tôi tour giá từ [3000](low) đến [120000](high) tại [Hà Tĩnh](location)
+    - Tôi muốn đặt tour giá từ [1000](low) đến [105000](high) ở [Quảng Nam](location)
+    - Cho tôi một tour giá từ [8000](low) đến [195000](high) tại [Lào Cai](location)
+    - Tôi cần tour giá từ [4000](low) đến [155000](high) ở [Cà Mau](location)
+    - Tôi muốn tìm tour giá từ [7000](low) đến [175000](high) ở [Nghệ An](location)
+    - Tour ở [Bắc Giang](location) có giá từ [6000](low) đến [145000](high)
+    - Tôi muốn tham quan [Thanh Hóa](location) với giá từ [5000](low) đến [125000](high)
+    - Có tour nào giá từ [2000](low) đến [115000](high) tại [Yên Bái](location) không?
+    - Tìm giúp tôi tour giá từ [9000](low) đến [185000](high) ở [Quảng Trị](location)
+
+- intent: search_tour_location_price_high
+  examples: |
+    - Tôi muốn đặt tour ở [Hà Nội](location) có giá thấp hơn [1500](high)
+    - Tôi muốn tìm tour ở [Huế](location) với giá thấp hơn [2000](high)
+    - Tôi muốn đặt tour tại [Hội An](location) với giá dưới [1800](high)
+    - Cho tôi một tour ở [Sa Pa](location) giá dưới [2200](high)
+    - Tôi cần tour ở [Vũng Tàu](location) giá thấp hơn [2500](high)
+    - Tìm giúp tôi tour ở [Phú Quốc](location) có giá dưới [1700](high)
+    - Có tour nào ở [Hạ Long](location) giá dưới [3000](high) không?
+    - Tôi muốn tham gia tour ở [Nha Trang](location) có giá dưới [2000](high)
+    - Cho tôi biết các tour ở [Cần Thơ](location) giá thấp hơn [2100](high)
+    - Tôi muốn tìm tour giá dưới [1600](high) ở [Đà Lạt](location)
+    - Tôi muốn du lịch ở [Quảng Ninh](location) với giá dưới [1900](high)
+    - Tôi muốn tham quan [Phan Thiết](location) với giá thấp hơn [2200](high)
+    - Có tour nào giá dưới [2500](high) tại [Huế](location) không?
+    - Tour ở [Bình Thuận](location) có giá dưới [2000](high)
+    - Tìm giúp tôi tour giá dưới [2100](high) ở [Quảng Bình](location)
+    - Tôi muốn đặt tour giá dưới [2300](high) tại [Kon Tum](location)
+    - Tôi cần tour giá thấp hơn [1200](high) ở [Đồng Nai](location)
+    - Cho tôi một tour giá dưới [1400](high) ở [Hà Giang](location)
+    - Tôi muốn tìm chuyến đi giá dưới [1600](high) tại [Tây Ninh](location)
+    - Tôi muốn đi [Ninh Bình](location) với giá dưới [1700](high)
+    - Có tour nào giá dưới [1300](high) tại [Bắc Ninh](location) không?
+    - Tìm giúp tôi tour giá dưới [1500](high) tại [Hà Tĩnh](location)
+    - Tôi muốn đặt tour giá thấp hơn [1100](high) ở [Quảng Nam](location)
+    - Cho tôi một tour giá thấp hơn [1200](high) tại [Lào Cai](location)
+    - Tôi cần tour giá dưới [1400](high) ở [Cà Mau](location)
+    - Tôi muốn tìm tour giá thấp hơn [1300](high) ở [Nghệ An](location)
+    - Tour ở [Bắc Giang](location) có giá dưới [1600](high)
+    - Tôi muốn tham quan [Thanh Hóa](location) với giá dưới [1500](high)
+    - Có tour nào giá dưới [1100](high) tại [Yên Bái](location) không?
+    - Tìm giúp tôi tour giá thấp hơn [1900](high) ở [Quảng Trị](location)
+
+- intent: search_tour_location_price_low
+  examples: |
+    - Tôi muốn đặt tour ở [Hà Nội](location) có giá cao hơn [1500](low)
+    - Tôi muốn tìm tour ở [Huế](location) với giá trên [2000](low)
+    - Tôi muốn đặt tour tại [Hội An](location) với giá hơn [1800](low)
+    - Cho tôi một tour ở [Sa Pa](location) giá hơn [2200](low)
+    - Tôi cần tour ở [Vũng Tàu](location) giá lớn hơn [2500](low)
+    - Tìm giúp tôi tour ở [Phú Quốc](location) có giá hơn [1700](low)
+    - Có tour nào ở [Hạ Long](location) giá hơn [3000](low) không?
+    - Tôi muốn tham gia tour ở [Nha Trang](location) có giá hơn [2000](low)
+    - Cho tôi biết các tour ở [Cần Thơ](location) giá hơn [2100](low)
+    - Tôi muốn tìm tour giá hơn [1600](low) ở [Đà Lạt](location)
+    - Tôi muốn du lịch ở [Quảng Ninh](location) với giá hơn [1900](low)
+    - Tôi muốn tham quan [Phan Thiết](location) với giá hơn [2200](low)
+    - Có tour nào giá hơn [2500](low) tại [Huế](location) không?
+    - Tour ở [Bình Thuận](location) có giá hơn [2000](low)
+    - Tìm giúp tôi tour giá hơn [2100](low) ở [Quảng Bình](location)
+    - Tôi muốn đặt tour giá hơn [2300](low) tại [Kon Tum](location)
+    - Tôi cần tour giá hơn [1200](low) ở [Đồng Nai](location)
+    - Cho tôi một tour giá hơn [1400](low) ở [Hà Giang](location)
+    - Tôi muốn tìm chuyến đi giá hơn [1600](low) tại [Tây Ninh](location)
+    - Tôi muốn đi [Ninh Bình](location) với giá hơn [1700](low)
+    - Có tour nào giá hơn [1300](low) tại [Bắc Ninh](location) không?
+    - Tìm giúp tôi tour giá hơn [1500](low) tại [Hà Tĩnh](location)
+    - Tôi muốn đặt tour giá hơn [1100](low) ở [Quảng Nam](location)
+    - Cho tôi một tour giá hơn [1200](low) tại [Lào Cai](location)
+    - Tôi cần tour giá hơn [1400](low) ở [Cà Mau](location)
+    - Tôi muốn tìm tour giá hơn [1300](low) ở [Nghệ An](location)
+    - Tour ở [Bắc Giang](location) có giá hơn [1600](low)
+    - Tôi muốn tham quan [Thanh Hóa](location) với giá hơn [1500](low)
+    - Có tour nào giá hơn [1100](low) tại [Yên Bái](location) không?
+    - Tìm giúp tôi tour giá hơn [1900](low) ở [Quảng Trị](location)

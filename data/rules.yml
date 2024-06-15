@@ -1,0 +1,135 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: book tour
+  steps:
+    - intent: book_tour
+    - action: utter_ask_book_tour
+
+- rule: active search tour price between form
+  steps:
+  - intent: search_tour_price_between
+  - action: search_tour_price_between_form
+  - active_loop: search_tour_price_between_form
+
+- rule: deactive search tour price between form
+  condition:
+  - active_loop: search_tour_price_between_form
+  steps:
+  - action: search_tour_price_between_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_search_tour_price_between_value
+
+- rule: active search tour price low form
+  steps:
+  - intent: search_tour_price_low
+  - action: search_tour_price_low_form
+  - active_loop: search_tour_price_low_form
+
+- rule: deactive search tour price low form
+  condition:
+  - active_loop: search_tour_price_low_form
+  steps:
+  - action: search_tour_price_low_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_search_tour_price_low_value
+
+- rule: active search tour price high form
+  steps:
+  - intent: search_tour_price_high
+  - action: search_tour_price_high_form
+  - active_loop: search_tour_price_high_form
+
+- rule: deactive search tour price high form
+  condition:
+  - active_loop: search_tour_price_high_form
+  steps:
+  - action: search_tour_price_high_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_search_tour_price_high_value
+
+- rule: active search tour location form
+  steps:
+  - intent: search_tour_location
+  - action: search_tour_location_form
+  - active_loop: search_tour_location_form
+
+- rule: deactive search tour location form
+  condition:
+  - active_loop: search_tour_location_form
+  steps:
+  - action: search_tour_location_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_search_tour_location_value
+
+- rule: active search tour location price between form
+  steps:
+  - intent: search_tour_location_price_between
+  - action: search_tour_location_price_between_form
+  - active_loop: search_tour_location_price_between_form
+
+- rule: deactive search tour location price between form
+  condition:
+  - active_loop: search_tour_location_price_between_form
+  steps:
+  - action: search_tour_location_price_between_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_search_tour_location_price_between_value
+
+- rule: active search tour location price high form
+  steps:
+  - intent: search_tour_location_price_high
+  - action: search_tour_location_price_high_form
+  - active_loop: search_tour_location_price_high_form
+
+- rule: deactive search tour location price high form
+  condition:
+  - active_loop: search_tour_location_price_high_form
+  steps:
+  - action: search_tour_location_price_high_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_search_tour_location_price_high_value
+
+- rule: active search tour location price low form
+  steps:
+  - intent: search_tour_location_price_low
+  - action: search_tour_location_price_low_form
+  - active_loop: search_tour_location_price_low_form
+
+- rule: deactive search tour location price low form
+  condition:
+  - active_loop: search_tour_location_price_low_form
+  steps:
+  - action: search_tour_location_price_low_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_search_tour_location_price_low_value

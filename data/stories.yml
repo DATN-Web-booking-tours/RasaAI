@@ -1,0 +1,35 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: book_tour story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: book_tour
+  - action: utter_ask_book_tour
+
+- story: book_tour story p2
+  steps:
+  - intent: book_tour
+  - action: utter_ask_book_tour
+  - intent: goodbye
+  - action: utter_goodbye
+
+# - story: search tour price story
+#   steps:
+#   - intent: search_tour_price
+#   - action: search_tour_price_form
+#   - active_loop: search_tour_price_form
+#   - slot_was_set:
+#     - low: 1000
+#     - hight: 5000
+#   - active_loop: null
+
+
+

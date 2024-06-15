@@ -1,0 +1,74 @@
+[
+  {
+    "text": "Tôi muốn đặt tour có giá trên 2000",
+    "entities": [
+      {
+        "start": 30,
+        "end": 34,
+        "value": "2000",
+        "entity": "low"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "hight",
+        "start": 30,
+        "end": 34,
+        "confidence_entity": 0.5534120798110962,
+        "value": "2000",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Tôi muốn đặt tour có giá hơn 2500",
+    "entities": [
+      {
+        "start": 29,
+        "end": 33,
+        "value": "2500",
+        "entity": "low"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "hight",
+        "start": 29,
+        "end": 33,
+        "confidence_entity": 0.5542380213737488,
+        "value": "2500",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Tôi muốn đặt tour có giá lớn hơn 2000",
+    "entities": [
+      {
+        "start": 33,
+        "end": 37,
+        "value": "2000",
+        "entity": "low"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "hight",
+        "start": 33,
+        "end": 37,
+        "confidence_entity": 0.5889363288879395,
+        "value": "2000",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

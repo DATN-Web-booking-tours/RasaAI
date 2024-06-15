@@ -1,0 +1,108 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - book_tour
+  - search_tour_price_between
+  - search_tour_price_high
+  - search_tour_price_low
+  - search_tour_location
+  - search_tour_location_price_between
+  - search_tour_location_price_high
+  - search_tour_location_price_low
+
+responses:
+  utter_greet:
+  - text: "Xin chào, tôi là chat bot. Tôi có thể giúp gì cho bạn?"
+
+  utter_goodbye:
+  - text: "Tạm biệt"
+  - text: "Hẹn gặp lại bạn"
+  - text: "Tạm biệt, hẹn gặp lại bạn"
+
+  utter_iamabot:
+  - text: "Tôi là bot, được train bởi rasa"
+
+  utter_ask_book_tour:
+  - text : "Để đặt tour trước tiên bạn phải đăng ký tài khoản; sau đó bạn chọn tour cần đặt, điền thông tin và thanh toán."
+
+  utter_search_tour_price_between_value:
+  - text : "Sau đây là danh sách tour có giá từ {low} đến {high}:Price-{low}-{high}"
+
+  utter_search_tour_price_low_value:
+  - text : "Sau đây là danh sách tour có giá trên {low}:Price-{low}-Inf"
+
+  utter_search_tour_price_high_value:
+  - text : "Sau đây là danh sách tour có giá dưới {high}:Price-0-{high}"
+
+  utter_search_tour_location_value:
+  - text : "Sau đây là danh sách tour ở {location}:Location-{location}"
+
+  utter_search_tour_location_price_between_value:
+  - text : "Sau đây là danh sách tour ở {location} và có giá từ {low} đến {high}:Location-{location}/-/Price-{low}-{high}"
+
+  utter_search_tour_location_price_high_value:
+  - text : "Sau đây là danh sách tour ở {location} và có giá dưới {high}:Location-{location}/-/Price-0-{high}"
+
+  utter_search_tour_location_price_low_value:
+  - text : "Sau đây là danh sách tour ở {location} và có giá trên {low}:Location-{location}/-/Price-{low}-Inf"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+entities:
+  - low
+  - high
+  - location
+
+slots:
+  low:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: low
+  high:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: high
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+
+
+forms:
+  search_tour_price_between_form:
+    required_slots:
+      - low
+      - high
+  search_tour_price_high_form:
+    required_slots:
+      - high
+  search_tour_price_low_form:
+    required_slots:
+      - low
+  search_tour_location_form:
+    required_slots:
+      - location
+  search_tour_location_price_between_form:
+    required_slots:
+      - low
+      - high
+      - location
+  search_tour_location_price_high_form:
+    required_slots:
+      - high
+      - location
+  search_tour_location_price_low_form:
+    required_slots:
+      - low
+      - location
+ 
+actions:
+  - action_ask_search_tour_price_form

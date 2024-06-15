@@ -1,2 +1,2 @@
-rasa
 dotenv
+rasa
